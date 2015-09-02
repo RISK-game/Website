@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
 	<meta charset="UTF-8">
 	<title>RISK - The Awesome game</title>
@@ -7,6 +7,8 @@
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<script src="js/vendor/angular.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-inverse">
@@ -20,7 +22,7 @@
         </button>
         <a class="navbar-brand" href="#">RISK</a>
       </div>
-      
+
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="/">Home</a></li>
@@ -37,6 +39,9 @@
       <p class="lead">
       	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi voluptas magnam, libero quo at perspiciatis quam voluptatibus consequuntur temporibus inventore neque ea, facere ab architecto impedit voluptatem deserunt, reprehenderit sunt!
       </p>
+
+      <input type="text" ng-model="name" placeholder="Fungerar angular?">
+      <h2>Hej {{name}}</h2>
     </div>
   </div><!-- /.container -->
 
