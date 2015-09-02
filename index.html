@@ -1,53 +1,78 @@
 <!DOCTYPE html>
 <html lang="en" ng-app>
-<head>
-  <meta charset="UTF-8">
-  <title>RISK - The Awesome game</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>RISK - The Awesome game</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="js/vendor/angular.js"></script>
+  </head>
+  <body>
+    <header class="primary">
+        <nav class="navbar navbar-default">
+          <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+                    <a class="navbar-brand" href="#/">RISK</a>
+                </div>
+        
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#/">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#/">Register</a></li>
+                        <li><a href="#/">Stats</a></li>
+                        <li><a href="#/">About</a></li>
+                    </ul>
+                </div>
+          </div>
+        </nav>
+    </header>
 
-  <script src="js/vendor/angular.js"></script>
-</head>
-<body>
-  <nav class="navbar navbar-inverse">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">RISK</a>
+    <main class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>RISK</h1>
+          <p class="lead">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi voluptas magnam, libero quo at perspiciatis quam voluptatibus consequuntur temporibus inventore neque ea, facere ab architecto impedit voluptatem deserunt, reprehenderit sunt!
+          </p>
+          
+          <input type="text" ng-model="name" placeholder="Fungerar angular?">
+          <h2>Hej {{name}}</h2>
+        </div>
+
+        <aside class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title" id="panel-title">Login</h3>
+            </div>
+            <div class="panel-body">
+              <form action="">
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="username" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-success">Login &amp; Play!</button>
+              </form>
+            </div>
+          </div>
+        </aside>
       </div>
-
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="/register">Register</a></li>
-          <li><a href="/stats">Stats</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </nav>
-
-  <div class="container">
-    <div class="starter-template">
-      <h1>RISK</h1>
-      <p class="lead">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi voluptas magnam, libero quo at perspiciatis quam voluptatibus consequuntur temporibus inventore neque ea, facere ab architecto impedit voluptatem deserunt, reprehenderit sunt!
-      </p>
-
-      <input type="text" ng-model="name" placeholder="Fungerar angular?">
-      <h2>Hej {{name}}</h2>
-    </div>
-  </div><!-- /.container -->
-
-
-  <!-- JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</body>
+    </main>
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
 </html>
