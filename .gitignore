@@ -2,6 +2,7 @@
 node_modules
 logs
 *.log
+dist
 
 #=== IDE ===
 *.sublime-*
