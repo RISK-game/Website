@@ -30,5 +30,5 @@ gulp.task('jsConcat:watch', function() {
 })
 
 
-
-gulp.task('default', ['sass:watch', 'jsConcat:watch']);
+gulp.task('devBuild', ['sass', 'jsConcat']);
+gulp.task('default', ['devBuild', 'sass:watch', 'jsConcat:watch']);
