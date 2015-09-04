@@ -17,3 +17,8 @@ All frontend code for the game. Driven by angular. This repo is forbidden to dir
 0. Use something like `http-server` to get an HTTP access point to the index.html file. (Run ` npm install http-server -g` and then open `localhost:8080` in your broswer). (You can't just open the index.html file because most AJAX calls will fail due to security reasons).
 
 1. Run `gulp`, this will watch for JS and SCSS changes and then build these files.
+
+
+### Git flow
+
+We use [simple git flow](https://gist.github.com/jbenet/ee6c9ac48068889b0912).
