@@ -22,6 +22,10 @@ risk.config(function($stateProvider, $urlRouterProvider) {
       url: '/register',
       templateUrl: 'views/register.html'
     })
+    .state('game', {
+      url: '/game',
+      templateUrl: 'views/game.html'
+    })
     .state('stats', {
       url: '/stats',
       templateUrl: 'views/stats.html'
