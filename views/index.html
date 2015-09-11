@@ -1,21 +1,12 @@
-<div class="col-md-8">
+<div class="col-md-8" ng-controller="index">
+  <div class="alert alert-success" ng-show="isFlashSet">
+    <p>{{ flashValue }}</p>
+  </div>
+
   <h1>RISK</h1>
   <p class="lead">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi voluptas magnam, libero quo at perspiciatis quam voluptatibus consequuntur temporibus inventore neque ea, facere ab architecto impedit voluptatem deserunt, reprehenderit sunt!
   </p>
-  
-  <input type="text" ng-model="name" placeholder="Fungerar angular?">
-  <h2>Hej {{name}}</h2>
-
-  <hr>
-
-  <ul ng-controller="testSwag">
-    <li ng-repeat="sak in list">
-      <p>
-        {{sak.name}}
-      </p>
-    </li>
-  </ul>
 </div>
 
 <aside class="col-md-4">
