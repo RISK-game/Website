@@ -57,6 +57,8 @@ risk.controller('register', function($scope, $http, API_URL) {
       data: $scope.form
     }).then(function(resp) {
       console.log(resp);
+      $scope.errors = [];
+
     }).catch(function(resp) {
       console.error(resp.data);
       $scope.errors = resp.data.errorMessages;
