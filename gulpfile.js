@@ -20,7 +20,12 @@ gulp.task('sass:watch', function () {
 // to the HTML code
 gulp.task('jsConcat', function() {
   // The core of angular is currently excluded to make debuing easier.
-  gulp.src(['!./js/vendor/angular.js', './js/**/*.js'])
+  gulp.src([
+      '!./js/vendor/angular.js',
+      './js/main.js',
+      './js/config.js',
+      './js/**/*.js'
+    ])
     .pipe(concat('main.js', {newLine: '/*concat*/ \n'}))
     .pipe(gulp.dest('./dist/'));
 });

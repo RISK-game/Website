@@ -5,3 +5,6 @@ console.log("Hej!");
 $.getJSON('http://127.0.0.1:3000/', function(r) {
   console.log(r);
 });
+
+
+var risk = angular.module('risk', ['ui.router']);

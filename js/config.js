@@ -1,10 +1,17 @@
-var risk = angular.module('risk', ['ui.router']);
+/**
+ * Constants
+ */
+risk.constant('API_URL', 'http://127.0.0.1:3000');
 
 
 risk.config(function($stateProvider, $urlRouterProvider) {
+
+  /**
+   * URL routing
+   */
+   
   // This is our 404 page
   $urlRouterProvider.otherwise('/');
-
 
   $stateProvider
     .state('index', {
@@ -23,16 +30,4 @@ risk.config(function($stateProvider, $urlRouterProvider) {
       url: '/about',
       templateUrl: 'views/about.html'
     });
-});
-
-
-risk.controller('testSwag', function($scope) {
-  $scope.list = [
-    {'name': 'Nexus S',
-     'snippet': 'Fast just got faster with Nexus S.'},
-    {'name': 'Motorola XOOM™ with Wi-Fi',
-     'snippet': 'The Next, Next Generation tablet.'},
-    {'name': 'MOTOROLA XOOM™',
-     'snippet': 'The Next, Next Generation tablet.'}
-  ];
 });
