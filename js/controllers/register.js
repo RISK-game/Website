@@ -19,14 +19,13 @@ risk.controller('register', function($scope, $http, $state, API_URL, Flash) {
       $scope.errors = [];
 
       Flash.set('registerSuccessful', 'Your account is now registered, you can now login.');
-      console.log(Flash.randomNum());
 
       $state.go('index');
     }).catch(function(resp) {
       // Some kind of error, often validation error
       console.error(resp.data);
 
-      $scope.errors = resp.data.errorMessages;
+      $scope.errors = resp.data.messages;
     });
   }
 });
