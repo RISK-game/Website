@@ -1,10 +1,15 @@
 var risk = angular.module('risk', ['ui.router']);
 
 
+/**
+ * Config constants
+ */
+risk.constant('API_URL', 'http://127.0.0.1:3000');
+
+
 risk.config(function($stateProvider, $urlRouterProvider) {
   // This is our 404 page
   $urlRouterProvider.otherwise('/');
-
 
   $stateProvider
     .state('index', {
@@ -35,4 +40,27 @@ risk.controller('testSwag', function($scope) {
     {'name': 'MOTOROLA XOOM™',
      'snippet': 'The Next, Next Generation tablet.'}
   ];
+});
+
+
+risk.controller('register', function($scope, $http, API_URL) {
+  $scope.errors = [];
+
+  $scope.submit = function() {
+    // TODO: Validation
+    console.log($scope.form);
+    console.log(API_URL);
+
+    $http({
+      method: 'POST',
+      url: API_URL + '/acc/register',
+      data: $scope.form
+    }).then(function(resp) {
+      console.log(resp);
+    }).catch(function(resp) {
+      console.error(resp.data);
+      $scope.errors = resp.data.errorMessages;
+    });
+
+  }
 });
