@@ -2,7 +2,15 @@ body {
   p {
     color: green;
   }
-
   
   color: red;
 }
+
+.chat-board {
+  margin:auto;
+  border: 1px solid black;
+  height:250px;
+  overflow-y:scroll;
+  max-width:550px;
+}
+

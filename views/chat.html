@@ -1,0 +1,23 @@
+<div class="col-md-12" ng-controller="chat">
+  <h1>Chat</h1>
+
+  <div class="alert alert-danger" ng-show="errors.length">
+    <ul ng-repeat="error in errors">
+      <li>{{ error }}</li>
+    </ul>
+  </div>
+
+  <div class="chat-board">
+    <ul ng-repeat="message in messages">
+      <li>
+        <p>From: {{message.name}}</p>
+        <img ng-src="{{message.image}}" />
+      </li>
+    </ul>
+    <!-- Chat form to write back -->
+  </div>
+
+  <p>{{ test }}</p>
+
+</div>
+

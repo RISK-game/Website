@@ -9,7 +9,7 @@ risk.config(function($stateProvider, $urlRouterProvider) {
   /**
    * URL routing
    */
-   
+
   // This is our 404 page
   $urlRouterProvider.otherwise('/');
 
@@ -29,5 +29,9 @@ risk.config(function($stateProvider, $urlRouterProvider) {
     .state('about', {
       url: '/about',
       templateUrl: 'views/about.html'
+    })
+    .state('chat',{
+      url:'/chat',
+      templateUrl:'views/chat.html'
     });
 });
