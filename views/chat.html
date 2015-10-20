@@ -1,5 +1,5 @@
 <div class="col-md-12 chat-body" ng-controller="chat">
-  <div class="panel panel-primary">
+  <div class="col-md-6 panel panel-primary">
     <div class="panel-body">
       <ul class="chat">
         <li ng-class="clearfix" ng-repeat="ms in messages">
@@ -14,12 +14,20 @@
         </li>
       </ul>
     </div>
-    <div class="panel-footer">
-      <div class="input-group">
-        <input id="btn-input" type="text" class="form-control input-sm">
-        <span class="input-group-btn">
-          <button class="btn btn-warning btn-sm" id="btn-chat">Send</button>
-        </span>
+    <div class="open-draw">
+      <div class="btn btn-primary">Open Draw Area!</div>
+    </div>
+  </div>
+  <div class="col-md-6 chat-controlls">
+    <div class="draw-area">
+      <canvas id="draw-canvas" width="400" height="200"></canvas>
+    </div>
+    <div class="buttons">
+      <div class="btn btn-success draw-send">Send!</div>
+      <div ng-click="deltaPencil(1)" class="btn btn-warning draw-send">+</div>
+      <div ng-click="deltaPencil(-1)" class="btn btn-warning draw-send">-</div>
+      <div class="color-table">
+        <div ng-repeat="color in colors" ng-click="thisColor(color)" class="color-box" style="background:{{ '#' + color }};"></div>
       </div>
     </div>
   </div>
