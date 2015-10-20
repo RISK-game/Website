@@ -1,5 +1,5 @@
 <div class="col-md-12 chat-body" ng-controller="chat">
-  <div class="col-md-6 panel panel-primary">
+  <div class="col-md-6 panel panel-primary message-board">
     <div class="panel-body">
       <ul class="chat">
         <li ng-class="clearfix" ng-repeat="ms in messages">
@@ -15,17 +15,18 @@
       </ul>
     </div>
     <div class="open-draw">
-      <div class="btn btn-primary">Open Draw Area!</div>
+      <div class="btn btn-primary" ng-click="openDrawArea()">Open Draw Area!</div>
     </div>
   </div>
-  <div class="col-md-6 chat-controlls">
+  <div class="col-md-6 chat-controlls hidden-under-nnt">
     <div class="draw-area">
       <canvas id="draw-canvas" width="400" height="200"></canvas>
     </div>
     <div class="buttons">
-      <div class="btn btn-success draw-send">Send!</div>
-      <div ng-click="deltaPencil(1)" class="btn btn-warning draw-send">+</div>
+      <div ng-click="send()" class="btn btn-success draw-send">Send!</div>
       <div ng-click="deltaPencil(-1)" class="btn btn-warning draw-send">-</div>
+      <div ng-click="deltaPencil(1)" class="btn btn-warning draw-send">+</div>
+      <div ng-click="closeDrawArea()" class="btn btn-danger draw-send btn-cancel">Cancel</div>
       <div class="color-table">
         <div ng-repeat="color in colors" ng-click="thisColor(color)" class="color-box" style="background:{{ '#' + color }};"></div>
       </div>

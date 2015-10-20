@@ -34,8 +34,21 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
   $scope.deltaPencil = function(delta){
     $scope.pencilSize += delta;
     if ($scope.pencilSize < 0) $scope.pencilSize = 0;
-    
     console.log($scope.pencilSize);
+  };
+
+  $scope.openDrawArea = function(){
+    $('.message-board').addClass('hidden-under-nnt');
+    $('.chat-controlls').removeClass('hidden-under-nnt');
+  };
+
+  $scope.closeDrawArea = function(){
+    $('.message-board').removeClass('hidden-under-nnt');
+    $('.chat-controlls').addClass('hidden-under-nnt');
+  };
+
+  $scope.send = function(){
+    console.log('Sending data');
   };
 
 });
