@@ -19,5 +19,5 @@ risk.controller('login', function($scope, $http, $state, API_URL, Flash) {
 
         $scope.errors = resp.data.messages;
       });
-  }
+  };
 });
