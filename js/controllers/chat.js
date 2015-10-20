@@ -7,17 +7,14 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
   $scope.test = "It's alive";
   $scope.messages = [
     {
-      isMe: true,
       username: 'Filip',
       src:'http://www.7-themes.com/data_images/out/63/6987665-cool-lion-pictures.jpg'
     },
     {
-      isMe: false,
       username: 'Filip',
       src:'http://www.7-themes.com/data_images/out/63/6987665-cool-lion-pictures.jpg'
     },
     {
-      isMe: false,
       username: 'Filip',
       src:'http://www.7-themes.com/data_images/out/63/6987665-cool-lion-pictures.jpg'
     }
@@ -35,33 +32,56 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
   }
   constructor();
 
-
+  /**
+   * Gets the color from the color grid and saves it
+   * at $scope.color.
+   * This is used as a color picker.
+   */
   $scope.setColor = function(color){
     console.log(color);
     $scope.color = '#'+color;
   };
 
+  /**
+   * This is udes to chenge the size of
+   * the pencil.
+   * delta is the change is size.
+   */
   $scope.deltaPencil = function(delta){
     $scope.pencilSize += delta;
     if ($scope.pencilSize < 0) $scope.pencilSize = 0;
   };
 
+  /**
+   * Shows the drwaing area and hides the message log.
+   * This will only happen if viewport width is less
+   * than 992px
+   */
   $scope.openDrawArea = function(){
     $('.message-board').addClass('hidden-under-nnt');
     $('.chat-controlls').removeClass('hidden-under-nnt');
   };
 
+  /**
+   * Hides the drwaing area and shows the message log.
+   * This will only happen if viewport width is less
+   * than 992px
+   */
   $scope.closeDrawArea = function(){
     $('.message-board').removeClass('hidden-under-nnt');
     $('.chat-controlls').addClass('hidden-under-nnt');
   };
 
+  /**
+   * This is the function called by the send button.
+   * Will later be used to send the image
+   */
   $scope.send = function(){
     console.log('Sending data');
   };
 
   /**
-   * Draw functonalityg 
+   * Draw functonalityg
    */
   function drawInCanvas() {
     var canvas = document.getElementById("draw-canvas"),
@@ -83,8 +103,6 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
     }, false);
 
 
-    
-      
     /**
      * Get mouse coordinates relative to the canvas
      */
@@ -99,7 +117,7 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
         return {x: currX, y: currY};
     }
 
-    /** 
+    /**
      * Draw a circle in the canvas
      */
     function circle(x, y, size, color) {
@@ -109,9 +127,6 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
       ctx.fill();
     }
   };
-
-
-
 });
 
 

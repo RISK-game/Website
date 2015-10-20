@@ -5,11 +5,11 @@
         <li ng-class="clearfix" ng-repeat="ms in messages">
           <div class="chat-body clearfix">
             <div class="header">
-              <small ng-class="text-muted username-text">
+              <small class="text-muted username-text">
                 {{ ms.username }}
               </small>
             </div>
-            <img src="{{ms.src}}">
+            <img ng-src="{{ms.src}}">
           </div>
         </li>
       </ul>
