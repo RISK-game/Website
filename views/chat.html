@@ -1,23 +1,27 @@
-<div class="col-md-12" ng-controller="chat">
-  <h1>Chat</h1>
-
-  <div class="alert alert-danger" ng-show="errors.length">
-    <ul ng-repeat="error in errors">
-      <li>{{ error }}</li>
-    </ul>
+<div class="col-md-12 chat-body" ng-controller="chat">
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <ul class="chat">
+        <li ng-class="clearfix" ng-repeat="ms in messages">
+          <div class="chat-body clearfix">
+            <div class="header">
+              <small ng-class="text-muted username-text">
+                {{ ms.username }}
+              </small>
+            </div>
+            <img src="{{ms.src}}">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="panel-footer">
+      <div class="input-group">
+        <input id="btn-input" type="text" class="form-control input-sm">
+        <span class="input-group-btn">
+          <button class="btn btn-warning btn-sm" id="btn-chat">Send</button>
+        </span>
+      </div>
+    </div>
   </div>
-
-  <div class="chat-board">
-    <ul ng-repeat="message in messages">
-      <li>
-        <p>From: {{message.name}}</p>
-        <img ng-src="{{message.image}}" />
-      </li>
-    </ul>
-    <!-- Chat form to write back -->
-  </div>
-
-  <p>{{ test }}</p>
-
 </div>
 

@@ -1,16 +1,65 @@
 body {
+  margin: 0px;
+  padding: 0px;
   p {
     color: green;
   }
-  
   color: red;
+  main.container {
+
+  }
 }
 
-.chat-board {
-  margin:auto;
-  border: 1px solid black;
-  height:250px;
-  overflow-y:scroll;
-  max-width:550px;
+// Chat variables
+$chat-width: 550px;
+$chat-height: 200px;
+
+.chat-body {
+  .panel {
+    position:relative;
+    height:550px;
+    max-height: calc(100vh - 80px);
+    margin-bottom:0px;
+    .chat {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted #B3A9A9;
+
+        .username-text{
+          position:absolute;
+          display:body;
+        }
+
+        .chat-body img{
+          display:block;
+          max-width:400px;
+          max-height:200px;
+          width:100%;
+          height:auto;
+          margin:auto;
+        }
+      }
+    }
+
+    .panel-body {
+      position:relative;
+      overflow-y: scroll;
+      height:95%;
+    }
+    .panel-footer {
+      position:absolute;
+      bottom:1px;
+      padding:0px;
+      margin:0px;
+    }
+  }
 }
+
+
+
 
