@@ -69,19 +69,27 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
         isDrawing = false;
 
     // Draw
-    canvas.addEventListener("mousemove", function (e) {
-        if(isDrawing) {
+    canvas.addEventListener("mousemove", draw, false);
+    canvas.addEventListener("touchmove", function(e) { e.preventDefault(); draw(e); }, false);
+    canvas.addEventListener("mousedown", startDrawing, false);
+    canvas.addEventListener("touchstart", startDrawing, false);
+    canvas.addEventListener("mouseup", endDrawing, false);
+    canvas.addEventListener("touchup", endDrawing, false);
+
+    function draw(e) {
+      if(isDrawing) {
           circle(getMouse(e).x, getMouse(e).y, $scope.pencilSize, $scope.color);
         }
-    }, false);
-    canvas.addEventListener("mousedown", function (e) {
+    }
+
+    function startDrawing(e) {
         isDrawing = true;
         circle(getMouse(e).x, getMouse(e).y, $scope.pencilSize, $scope.color);
-    }, false);
-    canvas.addEventListener("mouseup", function (e) {
-        isDrawing = false;
-    }, false);
+    }
 
+    function endDrawing(e) {
+        isDrawing = false;
+    }
 
     
       
@@ -90,9 +98,19 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
      */
     function getMouse(e) {
         var rect = canvas.getBoundingClientRect();
+        var x, y;
 
-        currX = e.clientX - rect.left;
-        currY = e.clientY - rect.top;
+        if(typeof e.clientX == 'undefined') {
+          x = event.touches[0].pageX;
+          y = event.touches[0].pageY;
+        }
+        else {
+          x = e.clientX;
+          y = e.clientY;
+        }
+
+        currX = x - rect.left;
+        currY = y - rect.top;
 
         console.log(currX, currY);
 
