@@ -79,13 +79,13 @@ $chat-height: 200px;
       margin-top: 10px;
       canvas{
         display:block;
+        width:100%;
         border:1px solid grey;
         margin:auto;
       }
     }
     .buttons{
       position:relative;
-      width:400px;
       margin:auto;
       margin-top: 5px;
       .draw-send{
