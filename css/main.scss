@@ -1,8 +1,147 @@
 body {
+  margin: 0px;
+  padding: 0px;
   p {
     color: green;
   }
-
-  
   color: red;
+  main.container {
+
+  }
 }
+
+// Chat variables
+$chat-width: 550px;
+$chat-height: 200px;
+
+.chat-body {
+  .panel {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: 1px solid red;
+    position:relative;
+    height:550px;
+    max-height: calc(100vh - 80px);
+    margin-bottom:0px;
+    .chat {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted #B3A9A9;
+
+        .username-text{
+          position:absolute;
+          display:body;
+        }
+
+        .chat-body img{
+          display:block;
+          max-width:400px;
+          max-height:200px;
+          width:100%;
+          height:auto;
+          margin:auto;
+        }
+      }
+    }
+
+    .panel-body {
+      position:relative;
+      overflow-y: scroll;
+      height: 100%;
+    }
+
+    .open-draw{
+      display:none;
+    }
+  }
+
+  .chat-controlls {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: 1px solid green;
+    border-left: 0px;
+    height:550px;
+    max-height: calc(100vh - 80px);
+    margin-bottom:0px;
+    .draw-area{
+      margin-top: 10px;
+      canvas{
+        display:block;
+        border:1px solid grey;
+        margin:auto;
+      }
+    }
+    .buttons{
+      position:relative;
+      width:400px;
+      margin:auto;
+      margin-top: 5px;
+      .draw-send{
+        margin-right:2px;
+        margin-bottom: 5px;
+        float:left;
+      }
+      .btn-cancel{
+        display:none;
+      }
+      .color-table{
+        position:realative;
+        top:10px;
+        clear:both;
+        display:block;
+        //margin: auto;
+        width: 250px;
+        padding:0px;
+        .color-box{
+          float:left;
+          width:50px;
+          height:50px;
+          margin:0xp;
+          padding:0px;
+          cursor:pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px){
+  .hidden-under-nnt{
+    display:none;
+  }
+
+  .chat-body{
+    .chat-controlls{
+      border-radius: 4px;
+      border: 1px solid green;
+      .buttons{
+        .btn-cancel{
+          display:block;
+        }
+      }
+    }
+    .panel{
+      border-radius: 4px;
+      border-right: 1px solid #337ab7;
+      .panel-body{
+        height:calc(100% - 45px);
+        
+      }
+      .open-draw{
+        display:block;
+        div {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
