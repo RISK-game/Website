@@ -62,6 +62,7 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
     }, false);
     canvas.addEventListener("mousedown", function (e) {
         isDrawing = true;
+        circle(getMouse(e).x, getMouse(e).y, $scope.pencilSize, $scope.color);
     }, false);
     canvas.addEventListener("mouseup", function (e) {
         isDrawing = false;
