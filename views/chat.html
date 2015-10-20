@@ -27,7 +27,7 @@
       <div ng-click="deltaPencil(1)" class="btn btn-warning draw-send">+</div>
       <div ng-click="deltaPencil(-1)" class="btn btn-warning draw-send">-</div>
       <div class="color-table">
-        <div ng-repeat="color in colors" ng-click="thisColor(color)" class="color-box" style="background:{{ '#' + color }};"></div>
+        <div ng-repeat="color in colors" ng-click="setColor(color)" class="color-box" style="background:{{ '#' + color }};"></div>
       </div>
     </div>
   </div>

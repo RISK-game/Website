@@ -25,6 +25,7 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
 
   $scope.colors = ['1abc9c', '16a085', 'f1c40f', 'f39c12', '2ecc71', '27ae60', 'e67e22', 'd35400', '3498db', '2980b9', 'e74c3c', 'c0392b', 'ffffff', '9b59b6', '8e44ad', 'bdc3c7', '34495e', '2c3e50', '95a5a6', '7f8c8d'];
   $scope.pencilSize = 10;
+  $scope.color = "#000";
 
   /**
    * Called when this controller is initalzied
@@ -35,19 +36,18 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
   constructor();
 
 
-  $scope.thisColor = function(color){
+  $scope.setColor = function(color){
     console.log(color);
+    $scope.color = '#'+color;
   };
 
   $scope.deltaPencil = function(delta){
     $scope.pencilSize += delta;
     if ($scope.pencilSize < 0) $scope.pencilSize = 0;
-    
-    console.log($scope.pencilSize);
   };
 
   /**
-   * 
+   * Draw functonalityg 
    */
   function drawInCanvas() {
     var canvas = document.getElementById("draw-canvas"),
@@ -57,7 +57,7 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
     // Draw
     canvas.addEventListener("mousemove", function (e) {
         if(isDrawing) {
-          circle(getMouse(e).x, getMouse(e).y, 10, "black");
+          circle(getMouse(e).x, getMouse(e).y, $scope.pencilSize, $scope.color);
         }
     }, false);
     canvas.addEventListener("mousedown", function (e) {
@@ -92,7 +92,6 @@ risk.controller('chat', function($scope, $http, $state, API_URL, Flash) {
       ctx.arc(x, y, size, 0, 2 * Math.PI, false);
       ctx.fillStyle = color;
       ctx.fill();
-      ctx.stroke();
     }
   }
 
